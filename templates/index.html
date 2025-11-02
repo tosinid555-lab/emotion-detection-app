@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Emotion Detection</h1>
+        <div class="upload-section">
+            <form id="uploadForm">
+                <input type="text" name="username" placeholder="Enter your name" required>
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Detect Emotion</button>
+            </form>
+        </div>
+        <div class="video-section">
+            <button id="startVideo">Start Video Capture</button>
+            <video id="videoElement" style="display: none;" width="640" height="480"></video>
+            <canvas id="canvasElement" style="display: none;"></canvas>
+        </div>
+        <div id="result" class="result-section"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
